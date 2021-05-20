@@ -43,7 +43,7 @@ const App = () => {
   const [lastAdded, setLastAdded] = useState(undefined);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://object-sorting-server.herokuapp.com/ws");
+    const ws = new WebSocket("wss://object-sorting-server.herokuapp.com/ws");
     ws.onmessage = onMessage;
     setInt(setInterval(() => ws.send("echo"), 1000));
     return () => {
